@@ -96,4 +96,33 @@ protected:
 	}
 };
 
+template<classT>
+void BST<T>::inorder(BSTNode<T> +p){
+    if(p!=0){
+         inorder(p->left);
+	 visit(p);
+	 inorder(p->right);
+    }
+}
+
+template<class T>
+void BST<T>::preorder(BSTNode<T> *p){
+	if(p != 0){
+	    visit(p);
+	    preorder(p->left);
+	    preorder(p->right);
+	}
+}
+
+template<class T>
+void BST<T>::postorder(BSTNode<T> *p){
+    if(p!=0){
+        postorder(p->left);
+	postorder(p->right);
+	visit(p);
+    }
+}
+
+
+
 #endif
