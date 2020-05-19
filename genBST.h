@@ -124,5 +124,29 @@ void BST<T>::postorder(BSTNode<T> *p){
 }
 
 
+template<class T>
+void BST<T>::insert(const T& el){
+    BSTNode<T> *p = root, *prev = 0;
+    while(p!=0){
+        prev = p;
+	if(el<p->el){
+	    p = p->left;
+	}
+	else{
+	    p = p->right;
+	}
+    }
+    if(root == 0){
+        root = new BSTNode<T>(el);
+    }
+    else if(el < prev->el){
+	prev->left = new BSTNode<T>(el);
+    }
+    else{
+        prev->right = new BSTNode<T>(el);
+    }
+    }
+
+
 
 #endif
